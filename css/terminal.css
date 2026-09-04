@@ -1,0 +1,105 @@
+#terminal-window {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    width: 600px;
+    height: 400px;
+    background: rgba(0,0,0,0.95);
+    color: #00ff00;
+    border-radius: 8px;
+    padding: 0;
+    font-family: monospace;
+    user-select: none;
+    display: none;
+    z-index: 100;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+#terminal-window.maximized {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 50px);
+    border-radius: 0;
+    cursor: default;
+}
+
+#terminal-titleBar {
+    height: 30px;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: grab;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.2)
+}
+
+#terminal-controls{
+    display: flex;
+    gap: 2px;
+}
+
+#terminal-controls button{
+    background: transparent;
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#terminal-controls button:hover{
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 4px;
+}
+
+#terminal-content {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#terminal-line {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+#terminal-prompt {
+    color: #00ff00;
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+#terminal-input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+    user-select: text;
+}
+
+#terminal-output {
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    user-select: text;
+}

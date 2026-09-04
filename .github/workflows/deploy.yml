@@ -1,0 +1,39 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          request_pty: true
+          host: ${{ secrets.SERVER_HOST }}
+          username: jack-jacobson2156
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            git config --global --add safe.directory /var/www/os-project
+
+            cd /var/www/os-project;
+
+            if [ ! -d ".git" ]; then
+              git init
+            fi
+
+            git remote remove origin 2>/dev/null || true
+            git remote add origin https://github.com/Jack-Jacobson/GenericOS.git
+
+            git fetch origin main
+            git reset --hard origin/main
+
+
+            echo "Deployment successful!"

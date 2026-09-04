@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GenericOS | Jack Jacobson</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notepad.css">
+    <link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="css/minesweeper.css">
+    <link rel="stylesheet" href="css/browser.css">
+</head>
+<body>
+    <div id="desktop">
+        <div id="boot-screen"></div>
+        <div id="notepad-window"> 
+            <div id="notepad-titleBar">
+                <div id="notepad-title">Notepad</div>
+                
+                <div id="controls">
+                    <button id="min-btn">-</button>
+                    <button id="max-btn">[]</button>
+                    <button id="close-btn">x</button>
+                </div>
+            </div>
+            <textarea id="notepad-textarea" placeholder="Type here!"></textarea>
+        </div>
+        <div id="minesweeper-window">
+            <div id="minesweeper-titleBar">
+                <div id="minesweeper-title">Minesweeper</div>
+                <div id="minesweeper-controls">
+                    <button id="minesweeper-min-btn">-</button>
+                    <button id="minesweeper-max-btn">[]</button>
+                    <button id="minesweeper-close-btn">X</button>
+                </div>
+            </div>
+            <div id="minesweeper-game-container">
+            </div>
+        </div>
+        <div id="notepad-icon" class="desktop-icon">
+            <img src="assets/notepad-icon.png" />
+            <div>Notepad</div>
+        </div>
+
+        <div id="terminal-window">
+            <div id="terminal-titleBar">
+                <div id="terminal-title">Terminal</div>
+
+                <div id="terminal-controls">
+                    <button id="terminal-min-btn">-</button>
+                    <button id="terminal-max-btn">[]</button>
+                    <button id="terminal-close-btn">X</button>
+                </div>
+            </div>
+            <div id="terminal-content">
+                <div id="terminal-output"></div>
+                <div id="terminal-line">
+                    <span id="terminal-prompt">user@GenericOS~:$ </span>
+                    <input id="terminal-input" autocomplete="off" placeholder="Type a command. Type 'help' for help."/>
+                </div>
+            </div>
+        </div>
+        <div id="browser-window">
+            <div id="browser-titleBar">
+                <div id="browser-title">Web Browser</div>
+                
+                <div id="browser-controls">
+                    <button id="browser-min-btn">-</button>
+                    <button id="browser-max-btn">[]</button>
+                    <button id="browser-close-btn">x</button>
+                </div>
+            </div>
+
+            <div id="browser-tab-bar">
+                <div id="browser-tabs-container"></div>
+                <button id="browser-new-tab-btn">+</button>
+            </div>
+
+            <div id="browser-toolbar">
+                <button id="browser-back-btn" title="Back">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+
+                <button id="browser-refresh-btn" title="Refresh">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 4v6h-6"></path>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                </button>
+
+                <input type="text" id="browser-url" value="" placeholder="Enter URL..." autocomplete="off">
+                <button id="browser-go-btn">Go</button>
+            </div>
+  
+            <div id="browser-content">
+                <iframe id="browser-iframe" src="https://example.com" title="Web Browser" frameborder="0"></iframe>
+      
+            </div>
+        </div>
+        <div id="minesweeper-icon" class ="desktop-icon">
+            <img src="assets/minesweeper-icon.png" />
+            <div>Minesweeper</div>
+        </div>
+
+        <div id="terminal-icon" class="desktop-icon">
+            <img src="assets/terminal-icon.png" />
+            <div>Terminal</div>
+        </div>
+
+        <div id="browser-icon" class="desktop-icon">
+            <img src="assets/browser-icon.png" />
+            <div>Browser</div>
+        </div>
+
+        <div id="taskbar">
+            <div id="os-text">GenericOS</div>
+            <div id="taskbar-seperator"></div>
+            <div id="taskbar-items"></div>
+            <div id="clock"></div>
+            <div id="taskbar-seperator-2"></div>
+            <button id="power-button">
+                <img src="assets/power-button-icon.png">
+            </button>
+            <div id="power-menu">
+                <div class="power-option">Power Off</div>
+                <div class="power-divider"></div>
+                <div class="power-option">Restart</div>
+            </div>
+            <div id="taskbar-seperator-3"></div>
+        </div>
+    </div>
+
+    <script src="js/commands.js"></script>
+    <script src="js/windowManager.js"></script>
+    <script src="js/notepad.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/powerManager.js"></script>
+    <script src="js/misc.js"></script>
+    <script src="js/minesweeper.js"></script>
+    <script src="js/browser.js"></script>
+
+</body>
+</html>
