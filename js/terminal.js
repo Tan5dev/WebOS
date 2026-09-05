@@ -140,7 +140,7 @@ terminalInput.addEventListener("keydown", (e) => {
     }
 
     const commandLine = document.createElement("div");
-    commandLine.textContent = `user@GenericOS~:$ ${command}`;
+    commandLine.textContent = `user@TanOS~:$ ${command}`;
     terminalOutput.appendChild(commandLine);
 
     const responseLine = document.createElement("div");
