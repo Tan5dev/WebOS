@@ -1,5 +1,6 @@
 (function() {
     const apps =[
+        
         { name: "Notepad", icon: "assets/notepad-icon.png", targetId: "notepad-icon" },
         { name: "Terminal", icon: "assets/terminal-icon.png", targetId: "terminal-icon" },
         { name: "Web Browser", icon: "assets/browser-icon.png", targetId: "browser-icon" },
